@@ -7,16 +7,16 @@
 <meta name="generator" content="Jekyll v4.0.0" />
 <meta property="og:title" content="Understanding Monte carlo Simulation" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Monte carlo simulation" />
-<meta property="og:description" content="Monte carlo simulation" />
-<link rel="canonical" href="https://prakashjayy.github.io/carbon2silicon/jupyter/2020/05/20/Monte-Carlo-estimation.html" />
-<meta property="og:url" content="https://prakashjayy.github.io/carbon2silicon/jupyter/2020/05/20/Monte-Carlo-estimation.html" />
+<meta name="description" content="Using Monte carlo simulation to estimate the statistics of any distribution" />
+<meta property="og:description" content="Using Monte carlo simulation to estimate the statistics of any distribution" />
+<link rel="canonical" href="https://prakashjayy.github.io/carbon2silicon/monte-carlo/gamma%20distribution/beta%20distribution/beta-binomial%20distribution/scipy/matplotlib/python/2020/05/20/Monte-Carlo-estimation.html" />
+<meta property="og:url" content="https://prakashjayy.github.io/carbon2silicon/monte-carlo/gamma%20distribution/beta%20distribution/beta-binomial%20distribution/scipy/matplotlib/python/2020/05/20/Monte-Carlo-estimation.html" />
 <meta property="og:site_name" content="carbon2silicon" />
 <meta property="og:image" content="https://prakashjayy.github.io/carbon2silicon/images/chart-preview.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-05-20T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"Monte carlo simulation","@type":"BlogPosting","headline":"Understanding Monte carlo Simulation","dateModified":"2020-05-20T00:00:00-05:00","datePublished":"2020-05-20T00:00:00-05:00","image":"https://prakashjayy.github.io/carbon2silicon/images/chart-preview.png","url":"https://prakashjayy.github.io/carbon2silicon/jupyter/2020/05/20/Monte-Carlo-estimation.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://prakashjayy.github.io/carbon2silicon/jupyter/2020/05/20/Monte-Carlo-estimation.html"},"@context":"https://schema.org"}</script>
+{"description":"Using Monte carlo simulation to estimate the statistics of any distribution","@type":"BlogPosting","headline":"Understanding Monte carlo Simulation","dateModified":"2020-05-20T00:00:00-05:00","datePublished":"2020-05-20T00:00:00-05:00","image":"https://prakashjayy.github.io/carbon2silicon/images/chart-preview.png","url":"https://prakashjayy.github.io/carbon2silicon/monte-carlo/gamma%20distribution/beta%20distribution/beta-binomial%20distribution/scipy/matplotlib/python/2020/05/20/Monte-Carlo-estimation.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://prakashjayy.github.io/carbon2silicon/monte-carlo/gamma%20distribution/beta%20distribution/beta-binomial%20distribution/scipy/matplotlib/python/2020/05/20/Monte-Carlo-estimation.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/carbon2silicon/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://prakashjayy.github.io/carbon2silicon/feed.xml" title="carbon2silicon" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -29,16 +29,16 @@
 <meta name="generator" content="Jekyll v4.0.0" />
 <meta property="og:title" content="Understanding Monte carlo Simulation" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Monte carlo simulation" />
-<meta property="og:description" content="Monte carlo simulation" />
-<link rel="canonical" href="https://prakashjayy.github.io/carbon2silicon/jupyter/2020/05/20/Monte-Carlo-estimation.html" />
-<meta property="og:url" content="https://prakashjayy.github.io/carbon2silicon/jupyter/2020/05/20/Monte-Carlo-estimation.html" />
+<meta name="description" content="Using Monte carlo simulation to estimate the statistics of any distribution" />
+<meta property="og:description" content="Using Monte carlo simulation to estimate the statistics of any distribution" />
+<link rel="canonical" href="https://prakashjayy.github.io/carbon2silicon/monte-carlo/gamma%20distribution/beta%20distribution/beta-binomial%20distribution/scipy/matplotlib/python/2020/05/20/Monte-Carlo-estimation.html" />
+<meta property="og:url" content="https://prakashjayy.github.io/carbon2silicon/monte-carlo/gamma%20distribution/beta%20distribution/beta-binomial%20distribution/scipy/matplotlib/python/2020/05/20/Monte-Carlo-estimation.html" />
 <meta property="og:site_name" content="carbon2silicon" />
 <meta property="og:image" content="https://prakashjayy.github.io/carbon2silicon/images/chart-preview.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-05-20T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"Monte carlo simulation","@type":"BlogPosting","headline":"Understanding Monte carlo Simulation","dateModified":"2020-05-20T00:00:00-05:00","datePublished":"2020-05-20T00:00:00-05:00","image":"https://prakashjayy.github.io/carbon2silicon/images/chart-preview.png","url":"https://prakashjayy.github.io/carbon2silicon/jupyter/2020/05/20/Monte-Carlo-estimation.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://prakashjayy.github.io/carbon2silicon/jupyter/2020/05/20/Monte-Carlo-estimation.html"},"@context":"https://schema.org"}</script>
+{"description":"Using Monte carlo simulation to estimate the statistics of any distribution","@type":"BlogPosting","headline":"Understanding Monte carlo Simulation","dateModified":"2020-05-20T00:00:00-05:00","datePublished":"2020-05-20T00:00:00-05:00","image":"https://prakashjayy.github.io/carbon2silicon/images/chart-preview.png","url":"https://prakashjayy.github.io/carbon2silicon/monte-carlo/gamma%20distribution/beta%20distribution/beta-binomial%20distribution/scipy/matplotlib/python/2020/05/20/Monte-Carlo-estimation.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://prakashjayy.github.io/carbon2silicon/monte-carlo/gamma%20distribution/beta%20distribution/beta-binomial%20distribution/scipy/matplotlib/python/2020/05/20/Monte-Carlo-estimation.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -115,7 +115,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Understanding Monte carlo Simulation</h1><p class="page-description">Monte carlo simulation</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-05-20T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Understanding Monte carlo Simulation</h1><p class="page-description">Using Monte carlo simulation to estimate the statistics of any distribution</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-05-20T00:00:00-05:00" itemprop="datePublished">
         May 20, 2020
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -128,7 +128,25 @@ window.onload = wrap_img;
     
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       
-        <a class="category-tags-link" href="/carbon2silicon/categories/#jupyter">jupyter</a>
+        <a class="category-tags-link" href="/carbon2silicon/categories/#monte-carlo">monte-carlo</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/carbon2silicon/categories/#gamma distribution">gamma distribution</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/carbon2silicon/categories/#beta distribution">beta distribution</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/carbon2silicon/categories/#beta-binomial distribution">beta-binomial distribution</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/carbon2silicon/categories/#scipy">scipy</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/carbon2silicon/categories/#matplotlib">matplotlib</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/carbon2silicon/categories/#python">python</a>
         
       
       </p>
@@ -161,12 +179,9 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
 <li class="toc-entry toc-h2"><a href="#Introduction">Introduction </a></li>
-<li class="toc-entry toc-h2"><a href="#Why?">Why? </a></li>
-<li class="toc-entry toc-h1"><a href="#Example-1">Example 1 </a>
-<ul>
+<li class="toc-entry toc-h2"><a href="#Why-Monte-carlo?">Why Monte carlo? </a></li>
+<li class="toc-entry toc-h2"><a href="#Example-1">Example 1 </a></li>
 <li class="toc-entry toc-h2"><a href="#Example-2">Example 2 </a></li>
-</ul>
-</li>
 </ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
@@ -190,8 +205,8 @@ window.onload = wrap_img;
 <a class="anchor" href="#Introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction<a class="anchor-link" href="#Introduction"> </a>
 </h2>
 <p>Monte carlo estimation refers to simulating hypothetical draws from a probablistic distribution in order to calculate important quantities of that distribution like mean, variance, quantiles etc. In this blog we will look at how to calculate these estimations for any given distribution using python scientific packages like scipy, numpy and matplotlib.</p>
-<h2 id="Why?">
-<a class="anchor" href="#Why?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why?<a class="anchor-link" href="#Why?"> </a>
+<h2 id="Why-Monte-carlo?">
+<a class="anchor" href="#Why-Monte-carlo?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why Monte carlo?<a class="anchor-link" href="#Why-Monte-carlo?"> </a>
 </h2>
 <p>In general, mathematically we can derive mean, std and other statistics for any <a href="https://docs.scipy.org/doc/scipy/reference/stats.html">standard</a> distribution. For example the mean of any distribution is obtained using 
 $$
@@ -231,12 +246,12 @@ $$</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Example-1">
+<h2 id="Example-1">
 <a class="anchor" href="#Example-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example 1<a class="anchor-link" href="#Example-1"> </a>
-</h1>
-<ul>
-<li>Lets try to estimate the mean of a <strong>Gamma</strong> distibution and compare it with actual mean of a gamma distribution. Mean of gamma distribution is $\alpha/\beta$</li>
-</ul>
+</h2>
+<blockquote>
+<p>Lets try to estimate the mean of a <strong>Gamma</strong> distibution and compare it with actual mean of a gamma distribution. Mean of gamma distribution is $\alpha/\beta$</p>
+</blockquote>
 
 </div>
 </div>
@@ -504,7 +519,10 @@ $$</p>
 <h2 id="Example-2">
 <a class="anchor" href="#Example-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example 2<a class="anchor-link" href="#Example-2"> </a>
 </h2>
-<p>A binomial distribution of N (10) trails where the probability of success follows a beta distribution (2, 2). This quite happens in bayesian modelling where we need to estimate the mean of joint probability of prior and likelihood (we will discuss in detail in some other blog post). In this example
+<blockquote>
+<p>A binomial distribution of N (10) trails where the probability of success follows a beta distribution (2, 2).</p>
+</blockquote>
+<p>This quite happens in bayesian modelling where we need to estimate the mean of joint probability of prior and likelihood (we will discuss in detail in some other blog post). In this example
 $$
 y|\phi = Bin(N, \phi)  
 $$
@@ -754,7 +772,7 @@ P(y=9|N, phi) = 0.0328
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/carbon2silicon/jupyter/2020/05/20/Monte-Carlo-estimation.html" hidden></a>
+</script><a class="u-url" href="/carbon2silicon/monte-carlo/gamma%20distribution/beta%20distribution/beta-binomial%20distribution/scipy/matplotlib/python/2020/05/20/Monte-Carlo-estimation.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
