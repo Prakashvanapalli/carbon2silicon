@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>A tutorial on understanding fastai apis | carbon2silicon</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="A tutorial on understanding fastai apis" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Fastai v2 has impressive APIs and functionality which helps us in writing better, concise and error free code. Lets deep dive into some of these core things here." />
+<meta property="og:description" content="Fastai v2 has impressive APIs and functionality which helps us in writing better, concise and error free code. Lets deep dive into some of these core things here." />
+<link rel="canonical" href="https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html" />
+<meta property="og:url" content="https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html" />
+<meta property="og:site_name" content="carbon2silicon" />
+<meta property="og:image" content="https://prakashjayy.github.io/carbon2silicon/images/favicon.ico" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-01T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"Fastai v2 has impressive APIs and functionality which helps us in writing better, concise and error free code. Lets deep dive into some of these core things here.","mainEntityOfPage":{"@type":"WebPage","@id":"https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html"},"@type":"BlogPosting","url":"https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html","headline":"A tutorial on understanding fastai apis","dateModified":"2020-07-01T00:00:00-05:00","datePublished":"2020-07-01T00:00:00-05:00","image":"https://prakashjayy.github.io/carbon2silicon/images/favicon.ico","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/carbon2silicon/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://prakashjayy.github.io/carbon2silicon/feed.xml" title="carbon2silicon" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-164645080-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+<link rel="shortcut icon" type="image/x-icon" href="/carbon2silicon/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>A tutorial on understanding fastai apis | carbon2silicon</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="A tutorial on understanding fastai apis" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Fastai v2 has impressive APIs and functionality which helps us in writing better, concise and error free code. Lets deep dive into some of these core things here." />
+<meta property="og:description" content="Fastai v2 has impressive APIs and functionality which helps us in writing better, concise and error free code. Lets deep dive into some of these core things here." />
+<link rel="canonical" href="https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html" />
+<meta property="og:url" content="https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html" />
+<meta property="og:site_name" content="carbon2silicon" />
+<meta property="og:image" content="https://prakashjayy.github.io/carbon2silicon/images/favicon.ico" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-01T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"Fastai v2 has impressive APIs and functionality which helps us in writing better, concise and error free code. Lets deep dive into some of these core things here.","mainEntityOfPage":{"@type":"WebPage","@id":"https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html"},"@type":"BlogPosting","url":"https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html","headline":"A tutorial on understanding fastai apis","dateModified":"2020-07-01T00:00:00-05:00","datePublished":"2020-07-01T00:00:00-05:00","image":"https://prakashjayy.github.io/carbon2silicon/images/favicon.ico","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://prakashjayy.github.io/carbon2silicon/feed.xml" title="carbon2silicon" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-164645080-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/carbon2silicon/">carbon2silicon</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/carbon2silicon/about/">About Me</a><a class="page-link" href="/carbon2silicon/search/">Search</a><a class="page-link" href="/carbon2silicon/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">A tutorial on understanding fastai apis</h1><p class="page-description">Fastai v2 has impressive APIs and functionality which helps us in writing better, concise and error free code. Lets deep dive into some of these core things here.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-07-01T00:00:00-05:00" itemprop="datePublished">
+        Jul 1, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/carbon2silicon/categories/#fastai">fastai</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/carbon2silicon/categories/#python">python</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/carbon2silicon/categories/#deep-learning">deep-learning</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/prakashjayy/carbon2silicon/tree/master/_notebooks/2020-07-01-Pythonic.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/carbon2silicon/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/prakashjayy/carbon2silicon/master?filepath=_notebooks%2F2020-07-01-Pythonic.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/carbon2silicon/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/prakashjayy/carbon2silicon/blob/master/_notebooks/2020-07-01-Pythonic.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/carbon2silicon/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Useful-decorators">Useful decorators </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Delegates">Delegates </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#@patch,--@patch_to-and-@patch_property">@patch,  @patch_to and @patch_property </a></li>
+<li class="toc-entry toc-h2"><a href="#Chunks">Chunks </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2020-07-01-Pythonic.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Useful-decorators">
+<a class="anchor" href="#Useful-decorators" aria-hidden="true"><span class="octicon octicon-link"></span></a>Useful decorators<a class="anchor-link" href="#Useful-decorators"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Delegates">
+<a class="anchor" href="#Delegates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Delegates<a class="anchor-link" href="#Delegates"> </a>
+</h3>
+<ul>
+<li>usually when we write a function with <strong>kwargs</strong>, it is difficult to get tab completion, so fastcore has implemented <a href="https://www.fast.ai/2019/08/06/delegation/">delegates</a> function which does this for you. </li>
+<li>It is extensively used in fastai2.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">from</span> <span class="nn">fastcore.foundation</span> <span class="kn">import</span> <span class="n">delegates</span>
+
+
+<span class="k">def</span> <span class="nf">create_web_page</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">"General"</span><span class="p">,</span> <span class="n">date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">author</span><span class="o">=</span><span class="s2">"Jeremy"</span><span class="p">):</span>
+    <span class="o">...</span>
+
+<span class="nd">@delegates</span><span class="p">(</span><span class="n">create_web_page</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">create_product_page</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">cost</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="o">...</span>
+    
+<span class="k">def</span> <span class="nf">create_product_page2</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">cost</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="o">...</span>
+    
+
+<span class="nb">print</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">create_product_page</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">create_product_page2</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(title, price, cost, category='General', date=None, author='Jeremy')
+(title, price, cost, **kwargs)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="@patch,--@patch_to-and-@patch_property">
+<a class="anchor" href="#@patch,--@patch_to-and-@patch_property" aria-hidden="true"><span class="octicon octicon-link"></span></a>@patch,  @patch_to and @patch_property<a class="anchor-link" href="#@patch,--@patch_to-and-@patch_property"> </a>
+</h2>
+<ul>
+<li>@patch and @patch_to tries to add methods to the already defined classes. We have used patch to add <strong>pad_resize</strong> to Image module. </li>
+<li>@patch_property adds attributes to already defined classes. suppose you have PIL.Image which doesn't have shape property. You want add this method to the PIL.Image, how can we do this?</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">fastcore.foundation</span> <span class="kn">import</span> <span class="n">patch_property</span><span class="p">,</span> <span class="n">patch</span>
+
+<span class="nd">@patch_property</span>
+<span class="k">def</span> <span class="nf">shape</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">):</span> <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nd">@patch</span>
+<span class="k">def</span> <span class="nf">pad_resize</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">Image</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">):</span>
+    <span class="s2">"Does padding and resize based on h/w"</span>
+    <span class="k">return</span> <span class="bp">self</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"../images/favicon.ico"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">Image</span><span class="o">.</span><span class="n">pad_resize</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span> <span class="c1">#</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(25, 35)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,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%0A">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Chunks">
+<a class="anchor" href="#Chunks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chunks<a class="anchor-link" href="#Chunks"> </a>
+</h2>
+<p>converting a list of lists to list for calculating length or passing it to dataloaders is expensive. fastai chunks makes this simple.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">fastai2.torch_core</span> <span class="kn">import</span> <span class="n">Chunks</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Chunks</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">lens</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">chunks</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">cumlens</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">totlen</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(#2) [2,2]
+[[1, 2], [3, 4]]
+[0 2 4]
+4
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="prakashjayy/carbon2silicon"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/carbon2silicon/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/carbon2silicon/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/carbon2silicon/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An Mathematical perspective.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/prakashjayy" title="prakashjayy"><svg class="svg-icon grey"><use xlink:href="/carbon2silicon/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/14prakash" title="14prakash"><svg class="svg-icon grey"><use xlink:href="/carbon2silicon/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
