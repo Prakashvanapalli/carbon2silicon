@@ -9,14 +9,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Fastai v2 has impressive APIs and functionality which helps us in writing better, concise and error free code. Lets deep dive into some of these core things here." />
 <meta property="og:description" content="Fastai v2 has impressive APIs and functionality which helps us in writing better, concise and error free code. Lets deep dive into some of these core things here." />
-<link rel="canonical" href="https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html" />
-<meta property="og:url" content="https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html" />
+<link rel="canonical" href="https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/fastai_deep_learning_101.html" />
+<meta property="og:url" content="https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/fastai_deep_learning_101.html" />
 <meta property="og:site_name" content="carbon2silicon" />
 <meta property="og:image" content="https://prakashjayy.github.io/carbon2silicon/images/favicon.ico" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-07-01T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"Fastai v2 has impressive APIs and functionality which helps us in writing better, concise and error free code. Lets deep dive into some of these core things here.","mainEntityOfPage":{"@type":"WebPage","@id":"https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html"},"@type":"BlogPosting","url":"https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html","headline":"A tutorial on understanding fastai apis","dateModified":"2020-07-01T00:00:00-05:00","datePublished":"2020-07-01T00:00:00-05:00","image":"https://prakashjayy.github.io/carbon2silicon/images/favicon.ico","@context":"https://schema.org"}</script>
+{"description":"Fastai v2 has impressive APIs and functionality which helps us in writing better, concise and error free code. Lets deep dive into some of these core things here.","mainEntityOfPage":{"@type":"WebPage","@id":"https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/fastai_deep_learning_101.html"},"@type":"BlogPosting","url":"https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/fastai_deep_learning_101.html","headline":"A tutorial on understanding fastai apis","dateModified":"2020-07-01T00:00:00-05:00","datePublished":"2020-07-01T00:00:00-05:00","image":"https://prakashjayy.github.io/carbon2silicon/images/favicon.ico","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/carbon2silicon/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://prakashjayy.github.io/carbon2silicon/feed.xml" title="carbon2silicon" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -31,14 +31,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Fastai v2 has impressive APIs and functionality which helps us in writing better, concise and error free code. Lets deep dive into some of these core things here." />
 <meta property="og:description" content="Fastai v2 has impressive APIs and functionality which helps us in writing better, concise and error free code. Lets deep dive into some of these core things here." />
-<link rel="canonical" href="https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html" />
-<meta property="og:url" content="https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html" />
+<link rel="canonical" href="https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/fastai_deep_learning_101.html" />
+<meta property="og:url" content="https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/fastai_deep_learning_101.html" />
 <meta property="og:site_name" content="carbon2silicon" />
 <meta property="og:image" content="https://prakashjayy.github.io/carbon2silicon/images/favicon.ico" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-07-01T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"Fastai v2 has impressive APIs and functionality which helps us in writing better, concise and error free code. Lets deep dive into some of these core things here.","mainEntityOfPage":{"@type":"WebPage","@id":"https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html"},"@type":"BlogPosting","url":"https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html","headline":"A tutorial on understanding fastai apis","dateModified":"2020-07-01T00:00:00-05:00","datePublished":"2020-07-01T00:00:00-05:00","image":"https://prakashjayy.github.io/carbon2silicon/images/favicon.ico","@context":"https://schema.org"}</script>
+{"description":"Fastai v2 has impressive APIs and functionality which helps us in writing better, concise and error free code. Lets deep dive into some of these core things here.","mainEntityOfPage":{"@type":"WebPage","@id":"https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/fastai_deep_learning_101.html"},"@type":"BlogPosting","url":"https://prakashjayy.github.io/carbon2silicon/fastai/python/deep-learning/2020/07/01/fastai_deep_learning_101.html","headline":"A tutorial on understanding fastai apis","dateModified":"2020-07-01T00:00:00-05:00","datePublished":"2020-07-01T00:00:00-05:00","image":"https://prakashjayy.github.io/carbon2silicon/images/favicon.ico","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -121,7 +121,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -145,19 +145,19 @@ window.onload = wrap_img;
         <div class="pb-5 d-flex flex-wrap flex-justify-end">
           <div class="px-2">
 
-    <a href="https://github.com/prakashjayy/carbon2silicon/tree/master/_notebooks/2020-07-01-Pythonic.ipynb" role="button" target="_blank">
+    <a href="https://github.com/prakashjayy/carbon2silicon/tree/master/_notebooks/2020-07-01-fastai_deep_learning_101.ipynb" role="button" target="_blank">
 <img class="notebook-badge-image" src="/carbon2silicon/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/prakashjayy/carbon2silicon/master?filepath=_notebooks%2F2020-07-01-Pythonic.ipynb" target="_blank">
+    <a href="https://mybinder.org/v2/gh/prakashjayy/carbon2silicon/master?filepath=_notebooks%2F2020-07-01-fastai_deep_learning_101.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/carbon2silicon/assets/badges/binder.svg" alt="Open In Binder"/>
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://colab.research.google.com/github/prakashjayy/carbon2silicon/blob/master/_notebooks/2020-07-01-Pythonic.ipynb" target="_blank">
+    <a href="https://colab.research.google.com/github/prakashjayy/carbon2silicon/blob/master/_notebooks/2020-07-01-fastai_deep_learning_101.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/carbon2silicon/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
@@ -169,15 +169,22 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Useful-decorators">Useful decorators </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Delegates">Delegates </a></li>
+<li class="toc-entry toc-h3"><a href="#@patch,--@patch_to-and-@patch_property">@patch,  @patch_to and @patch_property </a></li>
+<li class="toc-entry toc-h3"><a href="#@typedispatch">@typedispatch </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#@patch,--@patch_to-and-@patch_property">@patch,  @patch_to and @patch_property </a></li>
-<li class="toc-entry toc-h2"><a href="#Chunks">Chunks </a></li>
+<li class="toc-entry toc-h2"><a href="#@Transform">@Transform </a></li>
+<li class="toc-entry toc-h2"><a href="#Useful-functions">Useful functions </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Chunks">Chunks </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Important-points">Important points </a></li>
 </ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/2020-07-01-Pythonic.ipynb
+# file to edit: _notebooks/2020-07-01-fastai_deep_learning_101.ipynb
 -->
 
 <div class="container" id="notebook-container">
@@ -263,9 +270,9 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="@patch,--@patch_to-and-@patch_property">
+<h3 id="@patch,--@patch_to-and-@patch_property">
 <a class="anchor" href="#@patch,--@patch_to-and-@patch_property" aria-hidden="true"><span class="octicon octicon-link"></span></a>@patch,  @patch_to and @patch_property<a class="anchor-link" href="#@patch,--@patch_to-and-@patch_property"> </a>
-</h2>
+</h3>
 <ul>
 <li>@patch and @patch_to tries to add methods to the already defined classes. We have used patch to add <strong>pad_resize</strong> to Image module. </li>
 <li>@patch_property adds attributes to already defined classes. suppose you have PIL.Image which doesn't have shape property. You want add this method to the PIL.Image, how can we do this?</li>
@@ -346,9 +353,240 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Chunks">
-<a class="anchor" href="#Chunks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chunks<a class="anchor-link" href="#Chunks"> </a>
+<h3 id="@typedispatch">
+<a class="anchor" href="#@typedispatch" aria-hidden="true"><span class="octicon octicon-link"></span></a>@typedispatch<a class="anchor-link" href="#@typedispatch"> </a>
+</h3>
+<ul>
+<li>whenever we want to make a function work depending on the input type we can use typedispatch. say for example we want to add two numbers only if their types are both the same. </li>
+<li>It can be heavily used in augmentations in DL vision, where we implement different functions for say Resize of mask and Resize of image. Using typedispatch, makes us call only one function called resize, but appropriate resize happens after checking the type.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">fastcore.dispatch</span> <span class="kn">import</span> <span class="n">typedispatch</span>
+<span class="nd">@typedispatch</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+
+<span class="nd">@typedispatch</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="s2">"It doesn't work like this"</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>3
+It doesn't work like this
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@typedispatch</span>
+<span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f2</span><span class="p">(</span><span class="mf">9.0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>9.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="@Transform">
+<a class="anchor" href="#@Transform" aria-hidden="true"><span class="octicon octicon-link"></span></a>@Transform<a class="anchor-link" href="#@Transform"> </a>
 </h2>
+<p>Transform uses encodes, decodes and setup to make transformations to input objects.</p>
+<ul>
+<li>encodes: encodes the input, say resize the image from (H, W) to (h, w)</li>
+<li>decodes: decodes the output of encodes to inputs of encodes. resize back from (h,w) to (H, W)</li>
+<li>setups: can be used to setup attributes when the function is defined</li>
+</ul>
+<p>Note:</p>
+<ul>
+<li>if a tuple with different types are sent, only those types matching with encodes are processed. </li>
+<li>input types are maintained for output also. if we don't want this, we can use -&gt; None</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">fastcore.transform</span> <span class="kn">import</span> <span class="n">Transform</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="n">Transform</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">encodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:(</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">)):</span> <span class="k">return</span> <span class="n">x</span><span class="o">/</span><span class="mi">2</span>
+    <span class="k">def</span> <span class="nf">encodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:(</span><span class="nb">str</span><span class="p">,</span><span class="nb">list</span><span class="p">)):</span> <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="s1">'1'</span>
+    <span class="k">def</span> <span class="nf">decodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span> <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="s2">"a"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="mf">1.5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"a1"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">decode</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1.5
+a1
+[1, 2]1
+3.0
+a1
+(1.0, 'a1')
+(4, 'a')
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Useful-functions">
+<a class="anchor" href="#Useful-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Useful functions<a class="anchor-link" href="#Useful-functions"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Chunks">
+<a class="anchor" href="#Chunks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chunks<a class="anchor-link" href="#Chunks"> </a>
+</h3>
 <p>converting a list of lists to list for calculating length or passing it to dataloaders is expensive. fastai chunks makes this simple.</p>
 
 </div>
@@ -426,6 +664,37 @@ window.onload = wrap_img;
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Important-points">
+<a class="anchor" href="#Important-points" aria-hidden="true"><span class="octicon octicon-link"></span></a>Important points<a class="anchor-link" href="#Important-points"> </a>
+</h2>
+<ul>
+<li>use fastai2.torch_core.Module instead of torch.nn.Module so that we need not use super</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>This is under active development. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<script src="https://utteranc.es/client.js" repo="carbon2silicon" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -438,7 +707,7 @@ window.onload = wrap_img;
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/carbon2silicon/fastai/python/deep-learning/2020/07/01/Pythonic.html" hidden></a>
+</script><a class="u-url" href="/carbon2silicon/fastai/python/deep-learning/2020/07/01/fastai_deep_learning_101.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
