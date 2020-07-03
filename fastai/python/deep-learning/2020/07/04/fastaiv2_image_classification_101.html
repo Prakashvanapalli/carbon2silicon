@@ -176,6 +176,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h4"><a href="#TBD">TBD </a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h2"><a href="#work-in-progress">work in progress </a></li>
 <li class="toc-entry toc-h2"><a href="#Resources">Resources </a></li>
 </ul><!--
 #################################################
@@ -199,7 +200,7 @@ window.onload = wrap_img;
 <h2 id="Introduction">
 <a class="anchor" href="#Introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction<a class="anchor-link" href="#Introduction"> </a>
 </h2>
-<p>classifying objects is one of the primary tasks of Deep learning in computer vision. If this happens at image level it is called image classification and at pixel level it is called segmentation. Image (object) classification is the core for any analytics work you done on images. Lets see how image classification is done effectively using fastaiv2.</p>
+<p>classifying objects is one of the primary tasks of Deep learning in computer vision. If this happens at image level it is called image classification and at pixel level it is called segmentation. Image (object) classification is the core for any analytics work you do on images. In this blogpost, lets see how image classification is done effectively using fastaiv2.</p>
 
 </div>
 </div>
@@ -574,7 +575,7 @@ TODO:
 <p></p>
 <div class="flash flash-warn">
     <svg class="octicon octicon-zap octicon octicon-zap octicon octicon-zap" viewbox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7 9-9z"></path></svg>
-    <strong>Important: </strong>resnet18 is a function which takes pretrained as an argument, if you are defining your own architecture, make sure that it takes this an argument. 
+    <strong>Important: </strong>resnet18 is a function which takes pretrained as an argument, if you are defining your own architecture, make sure that it takes this as an argument. 
 </div>
 
 </div>
@@ -662,7 +663,7 @@ As defined in fastai docs, a learner is a Trainer for model using data to minimi
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">resnet18</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">n_out</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">resnet18</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">n_out</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">metics</span><span class="o">=</span><span class="p">[</span><span class="n">accuracy</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -748,17 +749,16 @@ moms=(0.95, 0.85, 0.95)</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>WORK IN PROGRESS</p>
+<h2 id="work-in-progress">
+<a class="anchor" href="#work-in-progress" aria-hidden="true"><span class="octicon octicon-link"></span></a>work in progress<a class="anchor-link" href="#work-in-progress"> </a>
+</h2>
 <ul>
-<li>dataset </li>
-<li>transforms and writing custom transforms</li>
-<li>dataloader </li>
-<li>networks available and writing custom networks</li>
-<li>loss and writing custom loss function</li>
-<li>optimizers and writing custom optimizers </li>
-<li>Learner module introduction</li>
-<li>callbacks and writing a custom callbacks </li>
-<li>useful tips </li>
+<li>How to define your own loss function? (focal loss)</li>
+<li>How to define your own metric? (auc_roc_score)</li>
+<li>write custom callbacks to save model body and head separately. (SAVEMODELHEAD)</li>
+<li>some useful tips for training classifiers</li>
+<li>use mix precision training </li>
+<li>training on a TPU</li>
 </ul>
 
 </div>
@@ -772,6 +772,7 @@ moms=(0.95, 0.85, 0.95)</p>
 </h2>
 <ul>
 <li><a href="https://www.kaggle.com/jhoward/fastai-v2-pipeline-tutorial">https://www.kaggle.com/jhoward/fastai-v2-pipeline-tutorial</a></li>
+<li><a href="https://docs.fast.ai/basic_train.html#Discriminative-layer-training">https://docs.fast.ai/basic_train.html#Discriminative-layer-training</a></li>
 </ul>
 
 </div>
