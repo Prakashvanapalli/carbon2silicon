@@ -174,19 +174,16 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Learner">Learner </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Splitter-and-lr">Splitter and lr </a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#Callbacks">Callbacks </a>
-<ul>
+<li class="toc-entry toc-h3"><a href="#Callbacks">Callbacks </a></li>
 <li class="toc-entry toc-h3"><a href="#schedular">schedular </a></li>
 <li class="toc-entry toc-h3"><a href="#train_bn,-unfreeze,--freeze-and-summary">train_bn, unfreeze,  freeze and summary </a></li>
+<li class="toc-entry toc-h3"><a href="#Using-SGDR-to-training">Using SGDR to training </a></li>
+<li class="toc-entry toc-h3"><a href="#Training-using-mix-precision">Training using mix precision </a></li>
+<li class="toc-entry toc-h3"><a href="#Predict,-save-and-show_results">Predict, save and show_results </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#Using-SGDR-to-training">Using SGDR to training </a></li>
-<li class="toc-entry toc-h2"><a href="#Training-using-mix-precision">Training using mix precision </a></li>
-<li class="toc-entry toc-h1"><a href="#Predict,-save-and-show_results">Predict, save and show_results </a>
+<li class="toc-entry toc-h1"><a href="#work-in-progress">work in progress </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#work-in-progress">work in progress </a></li>
 <li class="toc-entry toc-h2"><a href="#Resources">Resources </a></li>
 </ul>
 </li>
@@ -734,9 +731,9 @@ As defined in fastai docs, a learner is a Trainer for model using data to minimi
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Callbacks">
+<h3 id="Callbacks">
 <a class="anchor" href="#Callbacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Callbacks<a class="anchor-link" href="#Callbacks"> </a>
-</h2>
+</h3>
 <p>fastai's training loop is highly extensible, with a rich callback system. There are several <a href="https://docs.fast.ai/callbacks.html#callbacks">callbacks</a> defined and we can define our own using <a href="https://docs.fast.ai/callback.html#callback">callback</a>. Some of them include,</p>
 <h3 id="schedular">
 <a class="anchor" href="#schedular" aria-hidden="true"><span class="octicon octicon-link"></span></a>schedular<a class="anchor-link" href="#schedular"> </a>
@@ -1008,9 +1005,9 @@ Callbacks:
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Using-SGDR-to-training">
+<h3 id="Using-SGDR-to-training">
 <a class="anchor" href="#Using-SGDR-to-training" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using SGDR to training<a class="anchor-link" href="#Using-SGDR-to-training"> </a>
-</h2>
+</h3>
 </div>
 </div>
 </div>
@@ -1051,9 +1048,9 @@ Callbacks:
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Training-using-mix-precision">
+<h3 id="Training-using-mix-precision">
 <a class="anchor" href="#Training-using-mix-precision" aria-hidden="true"><span class="octicon octicon-link"></span></a>Training using mix precision<a class="anchor-link" href="#Training-using-mix-precision"> </a>
-</h2>
+</h3>
 </div>
 </div>
 </div>
@@ -1078,9 +1075,9 @@ Callbacks:
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Predict,-save-and-show_results">
+<h3 id="Predict,-save-and-show_results">
 <a class="anchor" href="#Predict,-save-and-show_results" aria-hidden="true"><span class="octicon octicon-link"></span></a>Predict, save and show_results<a class="anchor-link" href="#Predict,-save-and-show_results"> </a>
-</h1>
+</h3>
 <p>Once the model is trained, we want to check performance on test data or deploy (save) the model to validate on new data. Also we need to do an error analysis to understand where the model is making mistakes. The learner has all these methods</p>
 
 </div>
@@ -1190,9 +1187,9 @@ Callbacks:
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="work-in-progress">
+<h1 id="work-in-progress">
 <a class="anchor" href="#work-in-progress" aria-hidden="true"><span class="octicon octicon-link"></span></a>work in progress<a class="anchor-link" href="#work-in-progress"> </a>
-</h2>
+</h1>
 <ul>
 <li>training on a TPU</li>
 </ul>
